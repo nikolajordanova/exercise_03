@@ -5,7 +5,8 @@ rm(list=ls()) #clean, clc, close all
 # *************
 
 # Path
-setwd('V:/MPA-PRG/exercise_03') # set working directory
+# setwd('V:/MPA-PRG/exercise_03') # set working directory
+setwd('C:/Users/nikol/School/MPA-PRG/exercise_03')
 
 # IndexOfMin
 
@@ -36,10 +37,16 @@ SelectionSort(array,n)
 
 # RecursiveSelectionSort
 RecursiveSelectionSort <- function(array, first, last){
-   if (first <- last){
+   if (first < last){
      index <- IndexOfMin(array, first, last)
      array[c(first,index)] <- array[c(index, first)]
      array <- RecursiveSelectionSort(array, first + 1, last)
    }
    return (array)
 }
+
+
+array <- c(5,2,6,3,4)
+first <- 1
+last <- length(array)
+RecursiveSelectionSort(array, first, last)
